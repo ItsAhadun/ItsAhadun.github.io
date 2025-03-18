@@ -1,10 +1,168 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Get Early Access</title>
+  <!-- Google Fonts (optional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      overflow: hidden; /* hides any overflowing animated elements */
+      /* Animated background gradient */
+      background: linear-gradient(45deg, #111, #333, #555, #222);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Container for the form */
+    .form-container {
+      position: relative;
+      padding: 2rem;
+      border-radius: 10px;
+      /* Slightly transparent dark background */
+      background: rgba(0, 0, 0, 0.4);
+      /* Neon glow border + animated glow */
+      border: 2px solid #00ffc8;
+      box-shadow: 0 0 15px #00ffc8;
+      animation: neonGlow 3s ease-in-out infinite;
+      text-align: center;
+      width: 300px;
+    }
+
+    @keyframes neonGlow {
+      0%, 100% {
+        box-shadow: 0 0 10px #00ffc8, 0 0 20px #00ffc8;
+        border-color: #00ffc8;
+      }
+      50% {
+        box-shadow: 0 0 10px #ff00b5, 0 0 20px #ff00b5;
+        border-color: #ff00b5;
+      }
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    input[type="email"] {
+      width: 80%;
+      padding: 0.6rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      border: 2px solid #ccc;
+      outline: none;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    input[type="email"]:focus {
+      border-color: #00ffc8;
+    }
+
+    button {
+      cursor: pointer;
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 2px solid #fff;
+      background: transparent;
+      color: #fff;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      /* Hover glow */
+      box-shadow: 0 0 10px #fff, inset 0 0 10px #fff;
+    }
+
+    /* Optional floating particles/stars for extra flair */
+    .star {
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      width: 3px;
+      height: 3px;
+      background: #fff;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: floatStars 6s linear infinite;
+    }
+
+    @keyframes floatStars {
+      0% {
+        transform: translateY(0) translateX(0);
+      }
+      100% {
+        transform: translateY(120vh) translateX(60vw);
+      }
+    }
+    /* Create multiple .star elements via JS or just copy/paste in HTML for variety */
+  </style>
 </head>
 <body>
-    <h1>Welcome to My Website!</h1>
-    <p>This is Abdul Ahad's site. but still a work in progress</p>
+  <!-- Optional star elements for a "moving particle" effect -->
+  <div class="star" style="animation-delay: 0s; left:10%;"></div>
+  <div class="star" style="animation-delay: 1s; left:30%;"></div>
+  <div class="star" style="animation-delay: 2s; left:50%;"></div>
+  <div class="star" style="animation-delay: 3s; left:70%;"></div>
+  <div class="star" style="animation-delay: 4s; left:90%;"></div>
+
+  <div class="form-container">
+    <h1>Get early access!</h1>
+    <p>Join the waitlist to secure your spot and be the first to know when we launch!</p>
+    <form>
+      <input type="email" name="email" placeholder="johndoe@example.com" required />
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <!-- (Optional) JavaScript for randomizing star positions & intervals -->
+  <script>
+    // If you'd like more star effects, you can generate them dynamically:
+    const starCount = 25; // number of stars
+    for (let i = 0; i < starCount; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      // Random position & delay
+      star.style.left = Math.random() * 100 + '%';
+      star.style.animationDelay = Math.random() * 5 + 's';
+      document.body.appendChild(star);
+    }
+  </script>
 </body>
 </html>
