@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: black;
+}
+
+.waitlist-box {
+  position: relative;
+  z-index: 10; /* Ensures it stays above stars */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: white;
+  box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.8); /* White glow effect */
+}
+
+.shadow-waitlist {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* White glow */
+}
+
+/* Ensures stars are behind */
+#stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1; /* Behind the waitlist box */
+  pointer-events: none; /* Prevent interaction */
+}

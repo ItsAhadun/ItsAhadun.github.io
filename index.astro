@@ -1,0 +1,29 @@
+---
+import { onMount } from "solid-js";
+import { createStars } from "../lib/stars.js"; // Assuming you have a star generator
+
+onMount(() => {
+  createStars(); // Initializes stars
+});
+---
+
+<html>
+  <head>
+    <title>Waitlist</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="relative w-screen h-screen overflow-hidden bg-black">
+    
+    <!-- Stars Background -->
+    <canvas id="stars" class="absolute inset-0 z-0"></canvas>
+    
+    <!-- Waitlist Box -->
+    <div class="waitlist-box absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 rounded-lg bg-white bg-opacity-10 p-6 text-white backdrop-blur-md shadow-waitlist">
+      <h2 class="text-3xl font-bold">Join the Waitlist</h2>
+      <p class="text-sm opacity-80">Get notified when we launch.</p>
+      <input type="email" placeholder="Enter your email" class="mt-4 w-full rounded-lg border border-gray-500 bg-transparent p-2 text-white placeholder-gray-300 focus:outline-none">
+      <button class="mt-4 w-full rounded-lg bg-blue-500 p-2 font-bold text-white hover:bg-blue-600">Notify Me</button>
+    </div>
+
+  </body>
+</html>
